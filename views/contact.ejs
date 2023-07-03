@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("./partials/head.ejs") %>
+  <body>
+    <%- include("./partials/navbar.ejs") %>
+    <div class="container border rounded my-5 p-5">
+      <h1>Get in Touch</h1>
+      <form action="/submitMessage" method="POST">
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="name"
+            id="name"
+            placeholder="e.g., John Doe"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email Address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            placeholder="name@example.com"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label">Message</label>
+          <textarea
+            class="form-control"
+            id="message"
+            rows="3"
+            name="message"
+            placeholder="Type your message..."
+          ></textarea>
+        </div>
+        <button type="submit" class="btn btn-success w-100">Send</button>
+      </form>
+    </div>
+    <%- include("./partials/footer.ejs") %>
+  </body>
+</html>

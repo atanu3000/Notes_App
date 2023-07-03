@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("./partials/head.ejs") %>
+  <body>
+    <%- include("./partials/navbar.ejs") %>
+    <div class="container border rounded my-5 p-5">
+      <h1>Create new Note</h1>
+      <form action="/editNote/<%= note._id %>" method="POST">
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input
+            type="text"
+            class="form-control"
+            name="title"
+            id="title"
+            value="<%= note.title %>"
+            placeholder="Title of your note"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="details" class="form-label">Details</label>
+          <textarea
+            class="form-control"
+            id="details"
+            rows="3"
+            name="details"
+            placeholder="Details of your note..."
+          >
+<%= note.details %>
+          </textarea>
+        </div>
+        <button type="submit" class="btn btn-success w-100">Update Note</button>
+      </form>
+    </div>
+    <%- include("./partials/footer.ejs") %>
+  </body>
+</html>
